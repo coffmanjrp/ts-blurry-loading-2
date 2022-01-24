@@ -1,4 +1,4 @@
-const loadText = document.querySelector('.loading-text') as HTMLElement;
+const loadText = document.querySelector('.loading-text') as HTMLDivElement;
 const bg = document.querySelector('.bg') as HTMLElement;
 
 let load = 0;
@@ -20,7 +20,7 @@ function loading() {
 // Javascript / jQuery - map a range of numbers to another range of numbers
 // https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 
-type scale = (
+type Scale = (
   num: number,
   in_min: number,
   in_max: number,
@@ -28,6 +28,6 @@ type scale = (
   out_max: number
 ) => number;
 
-const scale: scale = (num, in_min, in_max, out_min, out_max) => {
+const scale: Scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
